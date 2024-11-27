@@ -1,0 +1,28 @@
+
+
+
+<div class="container">
+
+<div class="text-center">
+<h2>All our flats (<%= @flats.count %>)</h2>
+</div>
+
+<div class="align-items-end mb-3" >
+<%= link_to "Add a new flat", new_flat_path, class: "btn btn-primary" %>
+</div>
+
+<div class="row">
+  <% @flats.each do |flat| %>
+  <div class="col-sm-3">
+    <div class="card p-3 mb-3" style="position: relative; height: 450px">
+      <img class="card-img-top" src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%=flat.name %></h5>
+        <p class="card-text"><%=flat.description %></p>
+        <p style="position: absolute; bottom: 10px; left: 30px;"><%=link_to "More info", flat_path(flat), class: "btn btn-primary" %></p>
+      </div>
+    </div>
+  </div>
+    <% end %>
+</div>
+</div>
